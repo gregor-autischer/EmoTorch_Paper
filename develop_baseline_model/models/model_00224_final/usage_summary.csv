@@ -1,0 +1,4 @@
+Usage Type,Total Images,Anger,Fear,Calm,Surprise
+Training,31364,7662,7923,9588,6191
+FER_Validation,5535,1352,1398,1692,1093
+CKP_Validation,2069,419,232,643,775

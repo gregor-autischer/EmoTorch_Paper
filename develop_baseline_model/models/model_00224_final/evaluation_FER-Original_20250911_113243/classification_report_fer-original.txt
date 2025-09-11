@@ -1,0 +1,29 @@
+============================================================
+CLASSIFICATION REPORT - FER-Original
+============================================================
+
+Total Images: 20274
+Overall Accuracy: 56.83%
+Misclassified: 8753
+
+Detailed Metrics:
+----------------------------------------
+              precision    recall  f1-score   support
+
+       anger      0.473     0.708     0.568      4953
+        fear      0.489     0.384     0.430      5121
+        calm      0.674     0.525     0.590      6198
+    surprise      0.696     0.698     0.697      4002
+
+    accuracy                          0.568     20274
+   macro avg      0.583     0.579     0.571     20274
+weighted avg      0.583     0.568     0.565     20274
+
+
+Confusion Matrix:
+----------------------------------------
+True\Pred	anger	fear	calm	surprise
+anger		3508	614	600	231
+fear		1700	1968	729	724
+calm		1759	922	3253	264
+surprise		442	523	245	2792
