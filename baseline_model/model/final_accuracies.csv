@@ -1,0 +1,12 @@
+Metric,Value
+Training Accuracy,57.08
+Training Loss,-0.6554
+FER Validation Accuracy,51.29
+FER Validation Loss,-0.6168
+CKP Validation Accuracy,60.80
+CKP Validation Loss,-0.6749
+Combined Validation Accuracy,53.88
+Combined Validation Loss,-0.6327
+Epochs Completed,16
+Total Training Images,31364
+Total Validation Images,7604

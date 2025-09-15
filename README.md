@@ -1,6 +1,9 @@
-# EmoTorch
+# EmoTorch - Paper
 
 PyTorch implementation of emotion recognition using convolutional neural networks.
+
+# TRAIN MODEL FROM GROUND UP
+All the necessary scripts that were used to train the baseline model from the ground up are in the directory develop_baseline_model.
 
 ## Quick Start - Execution Order
 Run those commands from the project root.
@@ -8,10 +11,10 @@ Run those commands from the project root.
 ### Step 0: Create VENV and Install Requirements
 ```bash
 # Create virtual environment
-python -m venv fer_env
+python -m venv venv
 
 # Activate environment
-source fer_env/bin/activate  # On Windows: fer_env\Scripts\activate
+source venv/bin/activate  # On Windows: fer_env\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
@@ -112,10 +115,33 @@ It reads from ../../FER-Original-Dataset/ and outputs to ../../FER-Original-Data
 **`plot_training_history.py`**
 - Plots training/validation accuracy and loss curves
 
-## Required Data Structure
+
+# BASELINE MODEL
+The recreated baseline model and all its required files are in the baseline_model directory.
+
+## Scripts in baseline_model/model/
+
+**`predict_image_baselinemodel.py`**
+- Predicts emotion from a single image file using the baseline model
+- Takes image path as command-line argument
+- Displays predicted emotion with confidence score and probability distribution for all emotions
+- Usage: `python predict_image_baselinemodel.py <image_path> [model_path]`
+
+**`eval_model.py`**
+- Evaluates the baseline model on FER and CKP datasets from image_usage.csv
+- Generates side-by-side confusion matrices with percentages for both datasets
+- Calculates per-class precision, recall, and F1 scores
+- Creates a single combined visualization showing model performance on both datasets
+- Usage: `python eval_model.py`
+
+
+
+
+
+# Required Data Structure
 
 ```
-EmoTorch/
+EmoTorch_Paper/
 ├── develop_baseline_model/
 │   ├── helpers/           (data preparation scripts)
 │   └── models/            (training & analysis scripts)
@@ -132,16 +158,3 @@ EmoTorch/
 └── FER-Original-Dataset-Augmented/
     └── (same structure)
 ```
-
-## Installation
-
-
-```
-
-## Key Features
-
-- Dynamic train/validation splits with configurable data usage
-- Image usage tracking (which images used for training vs validation)
-- Automatic model folder creation with incremental numbering
-- Comprehensive metrics and confusion matrices
-- Reproducible training with random seeds

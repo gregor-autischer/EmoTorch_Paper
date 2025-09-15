@@ -1,0 +1,66 @@
+============================================================
+MODEL TRAINING PARAMETERS AND INFORMATION
+============================================================
+
+Training Date: 2025-09-10 04:18:48
+Model Folder: model_00224
+
+ARCHITECTURE:
+----------------------------------------
+Model Type: ConvolutionalNN (PyTorch)
+Input Shape: 1 x 48 x 48
+Filters: 10
+Kernel Size: (4, 4)
+Number of Classes: 4
+Emotion Labels: anger, fear, calm, surprise
+
+TRAINING CONFIGURATION:
+----------------------------------------
+Optimizer: RMSprop (lr=0.001)
+Loss Function: Cosine Proximity
+Batch Size: 32
+Epochs Configured: 50
+Epochs Completed: 16
+Early Stopping: patience=3
+ReduceLROnPlateau: factor=0.5, patience=5
+
+DATA USAGE FACTORS:
+----------------------------------------
+FER Original Usage: 0.984799 (98.480%)
+FER Augmented Usage: 0.029835 (2.984%)
+CKP Original Usage: 0.931732 (93.173%)
+CKP Augmented Usage: 0.077907 (7.791%)
+Train/Val Split (FER): 85.0/15.0
+
+RANDOM SEEDS:
+----------------------------------------
+Main Random Seed: 42
+Data Sampling Seed: 42
+Train/Val Split Seed: 42
+PyTorch Manual Seed: 42
+NumPy Random Seed: 42
+Python Random Seed: 42
+CUDA Deterministic: True
+CUDNN Benchmark: False
+
+DATASET INFORMATION:
+----------------------------------------
+Training Images: 31364
+FER Validation Images: 5535
+CKP Validation Images: 2069
+Combined Validation Images: 7604
+Total Images: 38968
+
+FINAL PERFORMANCE:
+----------------------------------------
+Final Training Accuracy: 57.08%
+Final Training Loss: -0.6554
+Final FER Validation Accuracy: 51.29%
+Final CKP Validation Accuracy: 60.80%
+Final Combined Validation Accuracy: 53.88%
+Final Combined Validation Loss: -0.6327
+
+DEVICE INFORMATION:
+----------------------------------------
+Device: cpu
+Total Model Parameters: 6964
