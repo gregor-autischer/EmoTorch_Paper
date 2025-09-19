@@ -119,6 +119,15 @@ It reads from ../../FER-Original-Dataset/ and outputs to ../../FER-Original-Data
 # BASELINE MODEL
 The recreated baseline model and all its required files are in the baseline_model directory.
 
+## Scripts in baseline_model/helpers/
+
+**`generate_dataset_catalog.py`**
+- Generates a comprehensive CSV catalog of all images from both original and augmented datasets
+- Includes emotion labels, usage classifications (training/validation), and demographic attributes (race, gender, age)
+- Handles path normalization and matches augmented images to their source images for demographic data
+- **Requires**: `faces_gender_race.csv` from [EmoTorch_Run_FairFace](https://github.com/gregor-autischer/EmoTorch_Run_FairFace) copied to `baseline_model/model/`
+- Usage: `python baseline_model/helpers/generate_dataset_catalog.py`
+
 ## Scripts in baseline_model/model/
 
 **`predict_image_baselinemodel.py`**
