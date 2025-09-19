@@ -92,3 +92,6 @@ coverage.xml
 FER-Datasets/
 FER-Original-Dataset/
 FER-Original-Dataset-Augmented/
+
+# Generated files
+baseline_model/model/dataset_catalog.csv
