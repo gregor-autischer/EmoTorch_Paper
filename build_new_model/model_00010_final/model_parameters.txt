@@ -1,0 +1,32 @@
+============================================================
+ENHANCED MODEL V2 ARCHITECTURE
+============================================================
+
+Input shape: 1 x 48 x 48
+
+Block 1 (32 filters):
+  Conv2d-1 + BatchNorm2d: 32 filters, kernel_size=3x3, padding=1
+  Conv2d-2 + BatchNorm2d: 32 filters, kernel_size=3x3, padding=1
+  MaxPool2d: 2x2
+  Dropout2d: p=0.2
+
+Block 2 (64 filters):
+  Conv2d-3 + BatchNorm2d: 64 filters, kernel_size=3x3, padding=1
+  Conv2d-4 + BatchNorm2d: 64 filters, kernel_size=3x3, padding=1
+  MaxPool2d: 2x2
+  Dropout2d: p=0.30000000000000004
+
+Block 3 (128 filters):
+  Conv2d-5 + BatchNorm2d: 128 filters, kernel_size=3x3, padding=1
+  Conv2d-6 + BatchNorm2d: 128 filters, kernel_size=3x3, padding=1
+  MaxPool2d: 2x2
+  Dropout2d: p=0.4
+
+Global Average Pooling
+
+Fully Connected:
+  Linear-1 + BatchNorm1d: 128 -> 256
+  Dropout: p=0.4
+  Linear-2: 256 -> 4
+
+Total parameters: 321,892

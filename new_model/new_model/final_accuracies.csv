@@ -1,0 +1,8 @@
+Metric,Value
+Training Accuracy,78.75
+Training Loss,0.5349
+Test Accuracy,68.19
+Test Loss,0.8678
+Epochs Completed,20
+Total Training Images,207944
+Total Test Images,51986

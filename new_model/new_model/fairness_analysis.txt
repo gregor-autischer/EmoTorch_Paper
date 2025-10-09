@@ -1,0 +1,880 @@
+================================================================================
+FAIRNESS ANALYSIS REPORT
+================================================================================
+
+Generated: 2025-10-09 10:36:54
+
+================================================================================
+GENDER ANALYSIS
+================================================================================
+
+--------------------------------------------------------------------------------
+Gender: FEMALE
+--------------------------------------------------------------------------------
+Sample count: 26048
+Accuracy: 0.6978
+Precision (macro): 0.6878
+Recall (macro): 0.6979
+F1-Score (macro): 0.6856
+
+Confusion Matrix (Normalized):
+Image saved to model directory.
+
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.5121       0.6663       0.5791      
+fear         0.6306       0.5999       0.6149      
+calm         0.8983       0.6904       0.7807      
+surprise     0.7100       0.8351       0.7675      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.5121    0.6663    0.5791      4378
+        fear     0.6306    0.5999    0.6149      6523
+        calm     0.8983    0.6904    0.7807      8998
+    surprise     0.7100    0.8351    0.7675      6149
+
+    accuracy                         0.6978     26048
+   macro avg     0.6878    0.6979    0.6856     26048
+weighted avg     0.7219    0.6978    0.7022     26048
+
+
+--------------------------------------------------------------------------------
+Gender: MALE
+--------------------------------------------------------------------------------
+Sample count: 25300
+Accuracy: 0.6622
+Precision (macro): 0.6659
+Recall (macro): 0.6551
+F1-Score (macro): 0.6499
+
+Confusion Matrix (Normalized):
+Image saved to model directory.
+
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.6125       0.7675       0.6813      
+fear         0.4964       0.4517       0.4730      
+calm         0.8589       0.5794       0.6920      
+surprise     0.6958       0.8218       0.7535      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.6125    0.7675    0.6813      7590
+        fear     0.4964    0.4517    0.4730      4873
+        calm     0.8589    0.5794    0.6920      7513
+    surprise     0.6958    0.8218    0.7535      5324
+
+    accuracy                         0.6622     25300
+   macro avg     0.6659    0.6551    0.6499     25300
+weighted avg     0.6808    0.6622    0.6595     25300
+
+
+--------------------------------------------------------------------------------
+Gender: UNSURE
+--------------------------------------------------------------------------------
+Sample count: 638
+Accuracy: 0.8150
+Precision (macro): 0.5187
+Recall (macro): 0.5360
+F1-Score (macro): 0.5127
+
+Confusion Matrix (Normalized):
+Image saved to model directory.
+
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.2973       0.5000       0.3729      
+fear         0.0000       0.0000       0.0000      
+calm         0.9620       0.6705       0.7902      
+surprise     0.8157       0.9736       0.8877      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.2973    0.5000    0.3729        22
+        fear     0.0000    0.0000    0.0000        11
+        calm     0.9620    0.6705    0.7902       264
+    surprise     0.8157    0.9736    0.8877       341
+
+    accuracy                         0.8150       638
+   macro avg     0.5187    0.5360    0.5127       638
+weighted avg     0.8443    0.8150    0.8143       638
+
+
+================================================================================
+RACE ANALYSIS
+================================================================================
+
+--------------------------------------------------------------------------------
+Race: AFRICAN-AMERICAN
+--------------------------------------------------------------------------------
+Sample count: 3982
+Accuracy: 0.6200
+Precision (macro): 0.6037
+Recall (macro): 0.6345
+F1-Score (macro): 0.6003
+
+Confusion Matrix (Normalized):
+Image saved to model directory.
+
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.4185       0.7258       0.5309      
+fear         0.4602       0.4257       0.4423      
+calm         0.8534       0.5738       0.6862      
+surprise     0.6825       0.8129       0.7420      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.4185    0.7258    0.5309       693
+        fear     0.4602    0.4257    0.4423       693
+        calm     0.8534    0.5738    0.6862      1837
+    surprise     0.6825    0.8129    0.7420       759
+
+    accuracy                         0.6200      3982
+   macro avg     0.6037    0.6345    0.6003      3982
+weighted avg     0.6767    0.6200    0.6274      3982
+
+
+--------------------------------------------------------------------------------
+Race: ASIAN
+--------------------------------------------------------------------------------
+Sample count: 8074
+Accuracy: 0.6307
+Precision (macro): 0.6266
+Recall (macro): 0.6453
+F1-Score (macro): 0.6231
+
+Confusion Matrix (Normalized):
+Image saved to model directory.
+
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.5073       0.6566       0.5724      
+fear         0.5044       0.5339       0.5187      
+calm         0.8820       0.5901       0.7071      
+surprise     0.6126       0.8007       0.6941      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.5073    0.6566    0.5724      1683
+        fear     0.5044    0.5339    0.5187      1727
+        calm     0.8820    0.5901    0.7071      3179
+    surprise     0.6126    0.8007    0.6941      1485
+
+    accuracy                         0.6307      8074
+   macro avg     0.6266    0.6453    0.6231      8074
+weighted avg     0.6736    0.6307    0.6363      8074
+
+
+--------------------------------------------------------------------------------
+Race: CAUCASIAN
+--------------------------------------------------------------------------------
+Sample count: 39930
+Accuracy: 0.6985
+Precision (macro): 0.7033
+Recall (macro): 0.6980
+F1-Score (macro): 0.6935
+
+Confusion Matrix (Normalized):
+Image saved to model directory.
+
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.6023       0.7432       0.6654      
+fear         0.5987       0.5449       0.5705      
+calm         0.8872       0.6643       0.7598      
+surprise     0.7251       0.8397       0.7782      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.6023    0.7432    0.6654      9614
+        fear     0.5987    0.5449    0.5705      8987
+        calm     0.8872    0.6643    0.7598     11759
+    surprise     0.7251    0.8397    0.7782      9570
+
+    accuracy                         0.6985     39930
+   macro avg     0.7033    0.6980    0.6935     39930
+weighted avg     0.7148    0.6985    0.6989     39930
+
+
+================================================================================
+AGE GROUP ANALYSIS
+================================================================================
+
+--------------------------------------------------------------------------------
+Age Group: 0-3
+--------------------------------------------------------------------------------
+Sample count: 3366
+Accuracy: 0.6979
+Precision (macro): 0.6762
+Recall (macro): 0.6577
+F1-Score (macro): 0.6479
+
+Confusion Matrix (Normalized):
+Image saved to model directory.
+
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.5940       0.7744       0.6723      
+fear         0.5000       0.4707       0.4849      
+calm         0.8533       0.4681       0.6046      
+surprise     0.7576       0.9176       0.8300      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.5940    0.7744    0.6723       616
+        fear     0.5000    0.4707    0.4849       495
+        calm     0.8533    0.4681    0.6046       957
+    surprise     0.7576    0.9176    0.8300      1298
+
+    accuracy                         0.6979      3366
+   macro avg     0.6762    0.6577    0.6479      3366
+weighted avg     0.7170    0.6979    0.6863      3366
+
+
+--------------------------------------------------------------------------------
+Age Group: 20-39
+--------------------------------------------------------------------------------
+Sample count: 32538
+Accuracy: 0.6830
+Precision (macro): 0.6874
+Recall (macro): 0.6866
+F1-Score (macro): 0.6794
+
+Confusion Matrix (Normalized):
+Image saved to model directory.
+
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.5646       0.6995       0.6248      
+fear         0.5956       0.5764       0.5859      
+calm         0.8726       0.6358       0.7356      
+surprise     0.7167       0.8348       0.7713      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.5646    0.6995    0.6248      7084
+        fear     0.5956    0.5764    0.5859      7689
+        calm     0.8726    0.6358    0.7356     10021
+    surprise     0.7167    0.8348    0.7713      7744
+
+    accuracy                         0.6830     32538
+   macro avg     0.6874    0.6866    0.6794     32538
+weighted avg     0.7030    0.6830    0.6846     32538
+
+
+--------------------------------------------------------------------------------
+Age Group: 4-19
+--------------------------------------------------------------------------------
+Sample count: 7304
+Accuracy: 0.6903
+Precision (macro): 0.6729
+Recall (macro): 0.6857
+F1-Score (macro): 0.6688
+
+Confusion Matrix (Normalized):
+Image saved to model directory.
+
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.5575       0.7111       0.6250      
+fear         0.5372       0.5041       0.5202      
+calm         0.9057       0.6486       0.7559      
+surprise     0.6914       0.8792       0.7740      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.5575    0.7111    0.6250      1419
+        fear     0.5372    0.5041    0.5202      1331
+        calm     0.9057    0.6486    0.7559      2783
+    surprise     0.6914    0.8792    0.7740      1771
+
+    accuracy                         0.6903      7304
+   macro avg     0.6729    0.6857    0.6688      7304
+weighted avg     0.7189    0.6903    0.6919      7304
+
+
+--------------------------------------------------------------------------------
+Age Group: 40-69
+--------------------------------------------------------------------------------
+Sample count: 8118
+Accuracy: 0.6819
+Precision (macro): 0.6637
+Recall (macro): 0.6520
+F1-Score (macro): 0.6501
+
+Confusion Matrix (Normalized):
+Image saved to model directory.
+
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.6310       0.8114       0.7099      
+fear         0.5539       0.4077       0.4697      
+calm         0.8953       0.7481       0.8151      
+surprise     0.5746       0.6408       0.6059      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.6310    0.8114    0.7099      2805
+        fear     0.5539    0.4077    0.4697      1815
+        calm     0.8953    0.7481    0.8151      2596
+    surprise     0.5746    0.6408    0.6059       902
+
+    accuracy                         0.6819      8118
+   macro avg     0.6637    0.6520    0.6501      8118
+weighted avg     0.6920    0.6819    0.6783      8118
+
+
+--------------------------------------------------------------------------------
+Age Group: 70+
+--------------------------------------------------------------------------------
+Sample count: 660
+Accuracy: 0.4561
+Precision (macro): 0.5083
+Recall (macro): 0.4938
+F1-Score (macro): 0.4310
+
+Confusion Matrix (Normalized):
+Image saved to model directory.
+
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.1457       0.5455       0.2300      
+fear         0.2420       0.4935       0.3248      
+calm         0.9832       0.4211       0.5896      
+surprise     0.6623       0.5152       0.5795      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.1457    0.5455    0.2300        66
+        fear     0.2420    0.4935    0.3248        77
+        calm     0.9832    0.4211    0.5896       418
+    surprise     0.6623    0.5152    0.5795        99
+
+    accuracy                         0.4561       660
+   macro avg     0.5083    0.4938    0.4310       660
+weighted avg     0.7649    0.4561    0.5212       660
+
+
+================================================================================
+AUGMENTATION TYPE ANALYSIS
+================================================================================
+
+--------------------------------------------------------------------------------
+Augmentation Type: BLUR
+--------------------------------------------------------------------------------
+Sample count: 4726
+Accuracy: 0.5489
+Precision (macro): 0.5794
+Recall (macro): 0.5606
+F1-Score (macro): 0.5471
+
+Confusion Matrix (Raw Counts):
+                   anger        fear        calm    surprise
+       anger         682         239          32         137
+        fear         299         493          35         210
+        calm         325         300         654         246
+    surprise         103         165          41         765
+
+Confusion Matrix (Normalized):
+                   anger        fear        calm    surprise
+       anger      0.6257      0.2193      0.0294      0.1257
+        fear      0.2883      0.4754      0.0338      0.2025
+        calm      0.2131      0.1967      0.4289      0.1613
+    surprise      0.0959      0.1536      0.0382      0.7123
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.4840       0.6257       0.5458      
+fear         0.4119       0.4754       0.4414      
+calm         0.8583       0.4289       0.5719      
+surprise     0.5633       0.7123       0.6291      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.4840    0.6257    0.5458      1090
+        fear     0.4119    0.4754    0.4414      1037
+        calm     0.8583    0.4289    0.5719      1525
+    surprise     0.5633    0.7123    0.6291      1074
+
+    accuracy                         0.5489      4726
+   macro avg     0.5794    0.5606    0.5471      4726
+weighted avg     0.6070    0.5489    0.5503      4726
+
+
+--------------------------------------------------------------------------------
+Augmentation Type: DARK
+--------------------------------------------------------------------------------
+Sample count: 4726
+Accuracy: 0.7078
+Precision (macro): 0.7113
+Recall (macro): 0.7117
+F1-Score (macro): 0.7025
+
+Confusion Matrix (Raw Counts):
+                   anger        fear        calm    surprise
+       anger         831         145          43          71
+        fear         262         585          53         137
+        calm         268         136        1001         120
+    surprise          49          80          17         928
+
+Confusion Matrix (Normalized):
+                   anger        fear        calm    surprise
+       anger      0.7624      0.1330      0.0394      0.0651
+        fear      0.2527      0.5641      0.0511      0.1321
+        calm      0.1757      0.0892      0.6564      0.0787
+    surprise      0.0456      0.0745      0.0158      0.8641
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.5894       0.7624       0.6648      
+fear         0.6184       0.5641       0.5900      
+calm         0.8986       0.6564       0.7586      
+surprise     0.7389       0.8641       0.7966      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.5894    0.7624    0.6648      1090
+        fear     0.6184    0.5641    0.5900      1037
+        calm     0.8986    0.6564    0.7586      1525
+    surprise     0.7389    0.8641    0.7966      1074
+
+    accuracy                         0.7078      4726
+   macro avg     0.7113    0.7117    0.7025      4726
+weighted avg     0.7295    0.7078    0.7086      4726
+
+
+--------------------------------------------------------------------------------
+Augmentation Type: FOREHEAD BAR
+--------------------------------------------------------------------------------
+Sample count: 4726
+Accuracy: 0.6930
+Precision (macro): 0.6958
+Recall (macro): 0.6955
+F1-Score (macro): 0.6869
+
+Confusion Matrix (Raw Counts):
+                   anger        fear        calm    surprise
+       anger         810         147          56          77
+        fear         281         559          47         150
+        calm         251         154         998         122
+    surprise          71          72          23         908
+
+Confusion Matrix (Normalized):
+                   anger        fear        calm    surprise
+       anger      0.7431      0.1349      0.0514      0.0706
+        fear      0.2710      0.5391      0.0453      0.1446
+        calm      0.1646      0.1010      0.6544      0.0800
+    surprise      0.0661      0.0670      0.0214      0.8454
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.5732       0.7431       0.6472      
+fear         0.5998       0.5391       0.5678      
+calm         0.8879       0.6544       0.7535      
+surprise     0.7224       0.8454       0.7791      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.5732    0.7431    0.6472      1090
+        fear     0.5998    0.5391    0.5678      1037
+        calm     0.8879    0.6544    0.7535      1525
+    surprise     0.7224    0.8454    0.7791      1074
+
+    accuracy                         0.6930      4726
+   macro avg     0.6958    0.6955    0.6869      4726
+weighted avg     0.7145    0.6930    0.6940      4726
+
+
+--------------------------------------------------------------------------------
+Augmentation Type: HEAVY HAIR
+--------------------------------------------------------------------------------
+Sample count: 4726
+Accuracy: 0.6663
+Precision (macro): 0.6696
+Recall (macro): 0.6693
+F1-Score (macro): 0.6612
+
+Confusion Matrix (Raw Counts):
+                   anger        fear        calm    surprise
+       anger         754         164          60         112
+        fear         266         567          50         154
+        calm         251         166         957         151
+    surprise          79          89          35         871
+
+Confusion Matrix (Normalized):
+                   anger        fear        calm    surprise
+       anger      0.6917      0.1505      0.0550      0.1028
+        fear      0.2565      0.5468      0.0482      0.1485
+        calm      0.1646      0.1089      0.6275      0.0990
+    surprise      0.0736      0.0829      0.0326      0.8110
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.5585       0.6917       0.6180      
+fear         0.5751       0.5468       0.5606      
+calm         0.8684       0.6275       0.7286      
+surprise     0.6762       0.8110       0.7375      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.5585    0.6917    0.6180      1090
+        fear     0.5751    0.5468    0.5606      1037
+        calm     0.8684    0.6275    0.7286      1525
+    surprise     0.6762    0.8110    0.7375      1074
+
+    accuracy                         0.6663      4726
+   macro avg     0.6696    0.6693    0.6612      4726
+weighted avg     0.6889    0.6663    0.6682      4726
+
+
+--------------------------------------------------------------------------------
+Augmentation Type: HIGH CONTRAST
+--------------------------------------------------------------------------------
+Sample count: 4726
+Accuracy: 0.6748
+Precision (macro): 0.6764
+Recall (macro): 0.6752
+F1-Score (macro): 0.6673
+
+Confusion Matrix (Raw Counts):
+                   anger        fear        calm    surprise
+       anger         812         148          64          66
+        fear         314         509          57         157
+        calm         251         164         996         114
+    surprise          81          97          24         872
+
+Confusion Matrix (Normalized):
+                   anger        fear        calm    surprise
+       anger      0.7450      0.1358      0.0587      0.0606
+        fear      0.3028      0.4908      0.0550      0.1514
+        calm      0.1646      0.1075      0.6531      0.0748
+    surprise      0.0754      0.0903      0.0223      0.8119
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.5569       0.7450       0.6374      
+fear         0.5545       0.4908       0.5207      
+calm         0.8729       0.6531       0.7472      
+surprise     0.7213       0.8119       0.7639      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.5569    0.7450    0.6374      1090
+        fear     0.5545    0.4908    0.5207      1037
+        calm     0.8729    0.6531    0.7472      1525
+    surprise     0.7213    0.8119    0.7639      1074
+
+    accuracy                         0.6748      4726
+   macro avg     0.6764    0.6752    0.6673      4726
+weighted avg     0.6957    0.6748    0.6760      4726
+
+
+--------------------------------------------------------------------------------
+Augmentation Type: LIGHT NOISE
+--------------------------------------------------------------------------------
+Sample count: 4726
+Accuracy: 0.6909
+Precision (macro): 0.6919
+Recall (macro): 0.6938
+F1-Score (macro): 0.6838
+
+Confusion Matrix (Raw Counts):
+                   anger        fear        calm    surprise
+       anger         805         149          52          84
+        fear         253         553          56         175
+        calm         242         155         988         140
+    surprise          54          86          15         919
+
+Confusion Matrix (Normalized):
+                   anger        fear        calm    surprise
+       anger      0.7385      0.1367      0.0477      0.0771
+        fear      0.2440      0.5333      0.0540      0.1688
+        calm      0.1587      0.1016      0.6479      0.0918
+    surprise      0.0503      0.0801      0.0140      0.8557
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.5945       0.7385       0.6588      
+fear         0.5864       0.5333       0.5586      
+calm         0.8893       0.6479       0.7496      
+surprise     0.6973       0.8557       0.7684      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.5945    0.7385    0.6588      1090
+        fear     0.5864    0.5333    0.5586      1037
+        calm     0.8893    0.6479    0.7496      1525
+    surprise     0.6973    0.8557    0.7684      1074
+
+    accuracy                         0.6909      4726
+   macro avg     0.6919    0.6938    0.6838      4726
+weighted avg     0.7112    0.6909    0.6910      4726
+
+
+--------------------------------------------------------------------------------
+Augmentation Type: ORIGINAL
+--------------------------------------------------------------------------------
+Sample count: 4726
+Accuracy: 0.7186
+Precision (macro): 0.7161
+Recall (macro): 0.7199
+F1-Score (macro): 0.7118
+
+Confusion Matrix (Raw Counts):
+                   anger        fear        calm    surprise
+       anger         817         150          57          66
+        fear         245         587          58         147
+        calm         219         142        1056         108
+    surprise          45          78          15         936
+
+Confusion Matrix (Normalized):
+                   anger        fear        calm    surprise
+       anger      0.7495      0.1376      0.0523      0.0606
+        fear      0.2363      0.5661      0.0559      0.1418
+        calm      0.1436      0.0931      0.6925      0.0708
+    surprise      0.0419      0.0726      0.0140      0.8715
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.6161       0.7495       0.6763      
+fear         0.6134       0.5661       0.5888      
+calm         0.8904       0.6925       0.7790      
+surprise     0.7446       0.8715       0.8031      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.6161    0.7495    0.6763      1090
+        fear     0.6134    0.5661    0.5888      1037
+        calm     0.8904    0.6925    0.7790      1525
+    surprise     0.7446    0.8715    0.8031      1074
+
+    accuracy                         0.7186      4726
+   macro avg     0.7161    0.7199    0.7118      4726
+weighted avg     0.7332    0.7186    0.7191      4726
+
+
+--------------------------------------------------------------------------------
+Augmentation Type: ROTATION
+--------------------------------------------------------------------------------
+Sample count: 4726
+Accuracy: 0.6669
+Precision (macro): 0.6734
+Recall (macro): 0.6713
+F1-Score (macro): 0.6609
+
+Confusion Matrix (Raw Counts):
+                   anger        fear        calm    surprise
+       anger         804         143          54          89
+        fear         293         523          59         162
+        calm         302         157         929         137
+    surprise          70          87          21         896
+
+Confusion Matrix (Normalized):
+                   anger        fear        calm    surprise
+       anger      0.7376      0.1312      0.0495      0.0817
+        fear      0.2825      0.5043      0.0569      0.1562
+        calm      0.1980      0.1030      0.6092      0.0898
+    surprise      0.0652      0.0810      0.0196      0.8343
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.5473       0.7376       0.6284      
+fear         0.5747       0.5043       0.5372      
+calm         0.8739       0.6092       0.7179      
+surprise     0.6978       0.8343       0.7600      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.5473    0.7376    0.6284      1090
+        fear     0.5747    0.5043    0.5372      1037
+        calm     0.8739    0.6092    0.7179      1525
+    surprise     0.6978    0.8343    0.7600      1074
+
+    accuracy                         0.6669      4726
+   macro avg     0.6734    0.6713    0.6609      4726
+weighted avg     0.6929    0.6669    0.6672      4726
+
+
+--------------------------------------------------------------------------------
+Augmentation Type: TOP LEFT DIAGONAL
+--------------------------------------------------------------------------------
+Sample count: 4726
+Accuracy: 0.7086
+Precision (macro): 0.7070
+Recall (macro): 0.7096
+F1-Score (macro): 0.7020
+
+Confusion Matrix (Raw Counts):
+                   anger        fear        calm    surprise
+       anger         806         154          63          67
+        fear         251         582          54         150
+        calm         217         144        1047         117
+    surprise          61          84          15         914
+
+Confusion Matrix (Normalized):
+                   anger        fear        calm    surprise
+       anger      0.7394      0.1413      0.0578      0.0615
+        fear      0.2420      0.5612      0.0521      0.1446
+        calm      0.1423      0.0944      0.6866      0.0767
+    surprise      0.0568      0.0782      0.0140      0.8510
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.6037       0.7394       0.6647      
+fear         0.6037       0.5612       0.5817      
+calm         0.8880       0.6866       0.7744      
+surprise     0.7324       0.8510       0.7873      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.6037    0.7394    0.6647      1090
+        fear     0.6037    0.5612    0.5817      1037
+        calm     0.8880    0.6866    0.7744      1525
+    surprise     0.7324    0.8510    0.7873      1074
+
+    accuracy                         0.7086      4726
+   macro avg     0.7070    0.7096    0.7020      4726
+weighted avg     0.7247    0.7086    0.7098      4726
+
+
+--------------------------------------------------------------------------------
+Augmentation Type: TOP RECTANGLE
+--------------------------------------------------------------------------------
+Sample count: 4726
+Accuracy: 0.7135
+Precision (macro): 0.7117
+Recall (macro): 0.7136
+F1-Score (macro): 0.7064
+
+Confusion Matrix (Raw Counts):
+                   anger        fear        calm    surprise
+       anger         827         144          56          63
+        fear         262         568          62         145
+        calm         232         138        1064          91
+    surprise          58          78          25         913
+
+Confusion Matrix (Normalized):
+                   anger        fear        calm    surprise
+       anger      0.7587      0.1321      0.0514      0.0578
+        fear      0.2527      0.5477      0.0598      0.1398
+        calm      0.1521      0.0905      0.6977      0.0597
+    surprise      0.0540      0.0726      0.0233      0.8501
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.5997       0.7587       0.6699      
+fear         0.6121       0.5477       0.5781      
+calm         0.8815       0.6977       0.7789      
+surprise     0.7533       0.8501       0.7988      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.5997    0.7587    0.6699      1090
+        fear     0.6121    0.5477    0.5781      1037
+        calm     0.8815    0.6977    0.7789      1525
+    surprise     0.7533    0.8501    0.7988      1074
+
+    accuracy                         0.7135      4726
+   macro avg     0.7117    0.7136    0.7064      4726
+weighted avg     0.7283    0.7135    0.7142      4726
+
+
+--------------------------------------------------------------------------------
+Augmentation Type: TOP RIGHT DIAGONAL
+--------------------------------------------------------------------------------
+Sample count: 4726
+Accuracy: 0.7120
+Precision (macro): 0.7108
+Recall (macro): 0.7130
+F1-Score (macro): 0.7057
+
+Confusion Matrix (Raw Counts):
+                   anger        fear        calm    surprise
+       anger         805         160          57          68
+        fear         256         588          52         141
+        calm         221         141        1052         111
+    surprise          58          79          17         920
+
+Confusion Matrix (Normalized):
+                   anger        fear        calm    surprise
+       anger      0.7385      0.1468      0.0523      0.0624
+        fear      0.2469      0.5670      0.0501      0.1360
+        calm      0.1449      0.0925      0.6898      0.0728
+    surprise      0.0540      0.0736      0.0158      0.8566
+
+Per-Class Metrics:
+Emotion      Precision    Recall       F1-Score    
+--------------------------------------------------
+anger        0.6007       0.7385       0.6626      
+fear         0.6074       0.5670       0.5865      
+calm         0.8930       0.6898       0.7784      
+surprise     0.7419       0.8566       0.7952      
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       anger     0.6007    0.7385    0.6626      1090
+        fear     0.6074    0.5670    0.5865      1037
+        calm     0.8930    0.6898    0.7784      1525
+    surprise     0.7419    0.8566    0.7952      1074
+
+    accuracy                         0.7120      4726
+   macro avg     0.7108    0.7130    0.7057      4726
+weighted avg     0.7286    0.7120    0.7134      4726
+
+

@@ -155,3 +155,38 @@ class BaselineModel:
             'predicted_labels': predicted_labels,
             'emotion_labels': self.emotion_labels
         }
+    
+    def entropy_batch(self, image_paths: List[str]) -> Optional[List[float]]:
+        """
+        Calculate entropy for a batch of images.
+        
+        Args:
+            image_paths: List of image paths
+            
+        Returns:
+            list: List of entropy values for each image (None for failed predictions)
+        """
+        if not self.is_loaded:
+            return None
+        
+        entropies = []
+        
+        for image_path in image_paths:
+            img_tensor = self._preprocess_image(image_path)
+            if img_tensor is None:
+                entropies.append(None)
+                continue
+            
+            with torch.no_grad():
+                output = self.model(img_tensor)
+                probabilities = torch.softmax(output, dim=1)
+                
+                # Calculate entropy: -sum(p * log(p))
+                # Add small epsilon to avoid log(0)
+                eps = 1e-8
+                log_probs = torch.log(probabilities + eps)
+                entropy = -torch.sum(probabilities * log_probs, dim=1).item()
+                
+                entropies.append(entropy)
+        
+        return entropies
