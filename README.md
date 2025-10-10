@@ -5,7 +5,7 @@ A precursor to this project was the paper: Practical Application and Limitations
 The baseline model in this repository is a faithful recreation of the ConvlutionalNN model from the EmoPy Project [EmoPy](https://github.com/thoughtworksarts/EmoPy).
 The new model in the repository is a improved version that tries to address the shortcoming of the original model that came to light in the above mentioned paper during our certification attempt.
 
-This repository has a sister repo that just includes the two trained and ready to use facial emotion recogniton models. It can be found here: TODO
+This repository has a sister repo that just includes the two trained and ready to use facial emotion recogniton models. It can be found here: [EmoTorch](https://github.com/gregor-autischer/EmoTorch).
 
 # General Structure
 This entire repository is split into basically two sections. One for the baseline model and one for the new model, both of which have several directories and files. The general datastructure is:
