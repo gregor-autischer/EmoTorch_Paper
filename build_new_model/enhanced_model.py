@@ -161,7 +161,6 @@ class FERCSVDataset(Dataset):
                     print(f"  {race}: {count}")
 
     def get_labels(self):
-        """Return all labels for the dataset (used for WeightedRandomSampler)"""
         return [self.emotion_to_idx[emotion] for emotion in self.df['emotion']]
 
     def __len__(self):
@@ -241,9 +240,6 @@ class EmotionRecognitionTrainer:
         )
 
     def train(self, train_loader, epochs,val_loader=None, verbose=True):
-        """
-        Train the model with validation support.
-        """
         train_losses = []
         train_accuracies = []
         val_losses = []
@@ -456,9 +452,8 @@ class EmotionRecognitionTrainer:
 
     @staticmethod
     def save_confusion_matrix_image(cm, emotion_labels, save_path, title="Confusion Matrix", normalize=True):
-        """
-        Save confusion matrix as an image file.
-        """
+        # Save confusion matrix as an image file.
+
         if normalize:
             cm_display = cm.astype('float') / (cm.sum(axis=1)[:, np.newaxis] + 1e-10)
             fmt = '.3f'
@@ -494,10 +489,9 @@ class EmotionRecognitionTrainer:
         print(f"Model saved to: {filepath}")
 
 def compute_fairness_metrics(labels, preds, metadata_list, attribute_name, emotion_labels):
-    """
-    Compute fairness metrics for a specific demographic attribute
-    Returns: Dictionary with metrics for each group
-    """
+    # Compute fairness metrics for a specific demographic attribute
+    # Returns: Dictionary with metrics for each group
+
     results = {}
 
     # Extract attribute values
@@ -568,9 +562,8 @@ def compute_fairness_metrics(labels, preds, metadata_list, attribute_name, emoti
 
 
 def save_fairness_report(fairness_results, output_path, emotion_labels):
-    """
-    Save comprehensive fairness report to text file
-    """
+    # Save fairness report to text file
+
     with open(output_path, 'w') as f:
         f.write("="*80 + "\n")
         f.write("FAIRNESS ANALYSIS REPORT\n")
@@ -727,9 +720,8 @@ def save_fairness_report(fairness_results, output_path, emotion_labels):
 
 
 def get_next_model_folder(models_dir):
-    """
-    Get the next available model folder name (model_00001, model_00002, etc.)
-    """
+    # Get the next available model folder name (model_00001, model_00002, etc.)
+
     existing_folders = []
     if os.path.exists(models_dir):
         for folder in os.listdir(models_dir):

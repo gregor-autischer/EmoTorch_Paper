@@ -1,10 +1,10 @@
-"""
-FER_CKP_to_final_structure.py
-
-This script copies FER and CKP datasets from FER-Original-Dataset to FER-New-Dataset
-and transfers demographic information from faces_gender_race.csv to dataset_new_attributs.csv
-with proper mappings for race, gender, and age categories.
-"""
+############################################
+# copies FER and CKP datasets from FER-Original-Dataset to FER-New-Dataset
+# and transfers demographic information from faces_gender_race.csv to dataset_new_attributs.csv
+# with proper mappings for race, gender, and age categories.
+# 
+# by Gregor Autischer (September 2025)
+############################################
 
 import os
 import shutil
@@ -47,7 +47,7 @@ NEW_CSV_PATH = Path('./FER-New-Dataset/dataset_new_attributs.csv')
 
 
 def copy_datasets():
-    """Copy FER and CKP folders from FER-Original-Dataset to FER-New-Dataset"""
+    # Copy FER and CKP folders from FER-Original-Dataset to FER-New-Dataset
     datasets = ['FER', 'CKP']
 
     for dataset in datasets:
@@ -70,7 +70,6 @@ def copy_datasets():
 
 
 def process_demographic_data():
-    """Process demographic data from old CSV to new CSV format"""
     print("\nProcessing demographic data...")
 
     # Read old CSV
@@ -155,7 +154,6 @@ def process_demographic_data():
 
 
 def main():
-    """Main function"""
     print("Starting FER and CKP dataset migration...\n")
 
     # Step 1: Copy datasets

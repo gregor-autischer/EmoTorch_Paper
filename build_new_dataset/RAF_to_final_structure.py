@@ -1,10 +1,11 @@
-"""
-RAF_to_final_structure.py
+############################################
+# This script processes RAF-DB dataset images and metadata into the final FER-New-Dataset structure.
+# It copies aligned images to emotion-specific folders, renames them sequentially, and creates
+# a CSV file with image paths and demographic attributes.
+# 
+# by Gregor Autischer (September 2025)
+############################################
 
-This script processes RAF-DB dataset images and metadata into the final FER-New-Dataset structure.
-It copies aligned images to emotion-specific folders, renames them sequentially, and creates
-a CSV file with image paths and demographic attributes.
-"""
 
 import os
 import shutil
@@ -56,7 +57,7 @@ CSV_FILE_PATH = Path('./FER-New-Dataset/dataset_new_attributs.csv')
 
 
 def read_emotion_labels():
-    """Read emotion labels from list_patition_label.txt"""
+    # Read emotion labels from list_patition_label.txt
     emotion_labels = {}
     with open(EMOTION_LABEL_FILE, 'r') as f:
         for line in f:
@@ -69,7 +70,8 @@ def read_emotion_labels():
 
 
 def read_manual_attributes(image_name):
-    """Read gender, race, and age from manual attribute file"""
+    # Read gender, race, and age from manual attribute file
+
     # Convert image name to attribute file name
     # e.g., train_00001.jpg -> train_00001_manu_attri.txt
     base_name = image_name.replace('.jpg', '')
@@ -97,7 +99,7 @@ def read_manual_attributes(image_name):
 
 
 def create_directory_structure():
-    """Create the emotion folders in the final dataset structure"""
+    # Create the emotion folders in the final dataset structure
     emotions = ['anger', 'calm', 'fear', 'surprise']
     for emotion in emotions:
         emotion_dir = FINAL_DATASET_PATH / emotion
@@ -105,7 +107,7 @@ def create_directory_structure():
 
 
 def initialize_csv():
-    """Initialize the CSV file with headers if it doesn't exist"""
+    # Initialize the CSV file with headers if it doesn't exist
     CSV_FILE_PATH.parent.mkdir(parents=True, exist_ok=True)
 
     # Check if file exists and has content
@@ -119,7 +121,6 @@ def initialize_csv():
 
 
 def process_raf_images():
-    """Main processing function"""
     print("Starting RAF-DB to final structure conversion...")
 
     # Read emotion labels

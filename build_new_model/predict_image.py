@@ -1,10 +1,11 @@
 ############################################
 # Simple Image Prediction Script
 # Load trained model and predict emotion from a single image
-#
-# Usage: python predict_image.py <path_to_image>
-# Example: python predict_image.py /path/to/face.jpg
+# 
+# by Gregor Autischer (September 2025)
 ############################################
+
+# Usage: python predict_image.py <path_to_image>
 
 import sys
 import torch
@@ -16,7 +17,7 @@ import torch.nn.functional as F
 from enhanced_model import EnhancedConvolutionalNN
 
 def load_model(model_path, device='cpu'):
-    """Load the trained model from checkpoint"""
+    
     checkpoint = torch.load(model_path, map_location=device)
     config = checkpoint['model_config']
 

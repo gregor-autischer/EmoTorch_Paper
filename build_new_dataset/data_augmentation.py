@@ -1,22 +1,20 @@
-"""
-data_augmentation.py
+############################################
+# This script applies 10 specific augmentations to the FER-New-Dataset to create FER-New-Dataset-Augmented
+# 
+# by Gregor Autischer (September 2025)
+############################################
 
-This script applies 10 specific augmentations to the FER-New-Dataset to create
-FER-New-Dataset-Augmented. Focus is on geometric transformations, lighting variations,
-image quality degradation, and especially occlusions for head coverings (hats, hijabs).
-
-Augmentations:
-1. Rotation (Geometric)
-2. Dark (Lighting)
-3. High Contrast (Lighting)
-4. Light Noise (Image Quality)
-5. Blur (Image Quality)
-6. Top Rectangle (Head Covering - hats, hijabs)
-7. Top Left Diagonal (Head Covering)
-8. Top Right Diagonal (Head Covering)
-9. Forehead Bar (Head Covering - headbands)
-10. Heavy Hair (Head Covering)
-"""
+# Augmentations:
+# 1. Rotation (Geometric)
+# 2. Dark (Lighting)
+# 3. High Contrast (Lighting)
+# 4. Light Noise (Image Quality)
+# 5. Blur (Image Quality)
+# 6. Top Rectangle (Head Covering - hats, hijabs)
+# 7. Top Left Diagonal (Head Covering)
+# 8. Top Right Diagonal (Head Covering)
+# 9. Forehead Bar (Head Covering - headbands)
+# 10. Heavy Hair (Head Covering)
 
 import torch
 import kornia.augmentation as KA
@@ -53,7 +51,7 @@ AUGMENTATION_NAMES = [
 
 
 def load_image(image_path):
-    """Load image and convert to tensor"""
+
     img = Image.open(image_path).convert('L')
     # Ensure 48x48 size
     if img.size != (48, 48):
@@ -62,7 +60,7 @@ def load_image(image_path):
 
 
 def save_image(tensor, output_path):
-    """Save tensor as image"""
+
     if len(tensor.shape) == 3:
         tensor = tensor.squeeze(0)
     img_array = (tensor * 255).numpy().astype(np.uint8)
@@ -70,13 +68,8 @@ def save_image(tensor, output_path):
 
 
 def add_head_covering_occlusion(img_tensor, occlusion_type):
-    """
-    Add occlusions simulating head coverings (hats, hijabs, headbands, hair)
+    # Add occlusions simulating head coverings (hats, hijabs, headbands, hair)
 
-    Args:
-        img_tensor: [H, W] tensor
-        occlusion_type: Type of occlusion to add
-    """
     h, w = 48, 48
     img_copy = img_tensor.clone()
 
@@ -133,12 +126,8 @@ def add_head_covering_occlusion(img_tensor, occlusion_type):
 
 
 def get_augmentations(img_tensor):
-    """
-    Apply all 10 augmentations to the image
+    # Apply all 10 augmentations to the image
 
-    Returns:
-        List of (augmentation_name, augmented_tensor) tuples
-    """
     # Add batch and channel dimensions for Kornia: [1, 1, H, W]
     img_batch = img_tensor.unsqueeze(0).unsqueeze(0)
 
@@ -204,7 +193,7 @@ def get_augmentations(img_tensor):
 
 
 def create_output_directories():
-    """Create output directory structure"""
+
     for dataset in DATASETS:
         for emotion in EMOTIONS:
             output_path = OUTPUT_DIR / dataset / emotion
@@ -212,7 +201,7 @@ def create_output_directories():
 
 
 def augment_images():
-    """Process all images and create augmented versions"""
+
     print("Starting data augmentation for FER-New-Dataset...")
     print(f"Source: {SOURCE_DIR}")
     print(f"Output: {OUTPUT_DIR}")
@@ -277,9 +266,8 @@ def augment_images():
 
 
 def update_csv_with_augmented_data():
-    """
-    Add entries for augmented images to dataset_new_attributs.csv
-    """
+    # Add entries for augmented images to dataset_new_attributs.csv
+
     print("\nUpdating CSV with augmented image entries...")
 
     # Read existing CSV
@@ -336,7 +324,6 @@ def update_csv_with_augmented_data():
 
 
 def main():
-    """Main function"""
     print("=" * 60)
     print("FER-New-Dataset Augmentation Script")
     print("=" * 60)

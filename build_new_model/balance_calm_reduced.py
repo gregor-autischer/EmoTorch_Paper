@@ -1,13 +1,8 @@
-"""
-balance_calm_reduced.py
-
-This script creates a dataset with the following characteristics:
-- CALM emotion: Uses 50% of available images (randomly selected)
-- Other emotions (anger, fear, surprise): Uses 100% of available images
-- No stratification applied
-- Maintains augmentation integrity: augmented images always follow their base images
-- Creates train/test split without data leakage
-"""
+############################################
+# This script creates a dataset with only 50% of CALM images to keep the dataset more balanced
+# 
+# by Gregor Autischer (September 2025)
+############################################
 
 import pandas as pd
 import numpy as np
@@ -25,9 +20,7 @@ EMOTIONS = ['anger', 'fear', 'calm', 'surprise']
 
 
 def load_and_filter_data(csv_path):
-    """
-    Load dataset and filter to only original images with valid emotions.
-    """
+
     print("Loading dataset...")
     df = pd.read_csv(csv_path)
 
@@ -46,9 +39,7 @@ def load_and_filter_data(csv_path):
 
 
 def analyze_emotion_distribution(df):
-    """
-    Analyze and display emotion distribution.
-    """
+
     print("\n" + "="*70)
     print("STEP 1: Analyzing Emotion Distribution")
     print("="*70)
@@ -61,17 +52,7 @@ def analyze_emotion_distribution(df):
 
 
 def sample_calm_images(df, sample_ratio=0.5, random_state=42):
-    """
-    Sample specified ratio of CALM images, keep all other emotions.
 
-    Args:
-        df: Input dataframe with original images only
-        sample_ratio: Ratio of CALM images to keep (default 0.5)
-        random_state: Random seed
-
-    Returns:
-        Dataframe with sampled CALM and all other emotions
-    """
     print("\n" + "="*70)
     print(f"STEP 2: Sampling CALM Images ({sample_ratio*100:.0f}%)")
     print("="*70)
@@ -106,20 +87,11 @@ def sample_calm_images(df, sample_ratio=0.5, random_state=42):
 
 
 def add_augmented_images(df_selected, df_full):
-    """
-    Add all augmented versions of the selected original images.
+    # Add all augmented versions of the selected original images.
+    # Ensures that:
+    # 1. Only augmented images matching selected originals are included
+    # 2. If a CALM image is not selected, its augmented versions are also excluded
 
-    Ensures that:
-    1. Only augmented images matching selected originals are included
-    2. If a CALM image is not selected, its augmented versions are also excluded
-
-    Args:
-        df_selected: Dataframe with selected original images
-        df_full: Full dataframe including all augmented images
-
-    Returns:
-        Dataframe with selected original images + their augmentations
-    """
     print("\n" + "="*70)
     print("STEP 3: Adding Augmented Images")
     print("="*70)
@@ -203,21 +175,8 @@ def add_augmented_images(df_selected, df_full):
 
 
 def add_train_test_split(df, train_ratio=0.8, random_state=42):
-    """
-    Add train/test split to the dataset.
+    # Add train/test split to the dataset (80/20)
 
-    Ensures:
-    1. 80/20 split for original images
-    2. Augmented images stay with their original image (no leakage)
-
-    Args:
-        df: Dataframe with original and augmented images
-        train_ratio: Proportion for training (default 0.8)
-        random_state: Random seed
-
-    Returns:
-        Dataframe with 'split' column added ('train' or 'test')
-    """
     print("\n" + "="*70)
     print("STEP 4: Adding 80/20 Train/Test Split")
     print("="*70)
@@ -314,9 +273,8 @@ def add_train_test_split(df, train_ratio=0.8, random_state=42):
 
 
 def save_dataset(df, output_path):
-    """
-    Save dataset to CSV.
-    """
+    # Save dataset to CSV.
+
     print("\n" + "="*70)
     print("STEP 5: Saving Dataset")
     print("="*70)
@@ -355,9 +313,7 @@ def save_dataset(df, output_path):
 
 
 def main():
-    """
-    Main function to create dataset with reduced CALM images.
-    """
+    
     print("="*70)
     print("CALM-REDUCED DATASET CREATION")
     print("50% of CALM images, 100% of other emotions")
