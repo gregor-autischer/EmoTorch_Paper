@@ -11,14 +11,7 @@ import sys
 import os
 
 def plot_both_matrices(fer_csv, ckp_csv, output_dir):
-    """
-    Plot both FER validation and CKP validation confusion matrices side by side
     
-    Args:
-        fer_csv: Path to FER validation confusion matrix CSV
-        ckp_csv: Path to CKP validation confusion matrix CSV
-        output_dir: Directory to save the plot
-    """
     # Read both CSV files
     fer_df = pd.read_csv(fer_csv, index_col=0)
     ckp_df = pd.read_csv(ckp_csv, index_col=0)

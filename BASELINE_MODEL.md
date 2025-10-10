@@ -75,11 +75,11 @@ and outputs to ../../FER-Original-Dataset/.
 
 It reads from ../../FER-Original-Dataset/ and outputs to ../../FER-Original-Dataset-Augmented/.
 
-**`create_train_test_subsets.py`** *(optional)*
+**`create_train_test_subsets.py`**
 - Splits data into train/validation sets
 - Not needed if using convolutional_nn_pytorch.py with dynamic splits
 
-**`create_train_test_subsets_augmented.py`** *(optional)*
+**`create_train_test_subsets_augmented.py`**
 - Same as above but for augmented data
 
 ### develop_baseline_model/Models (Training & Analysis)

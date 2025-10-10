@@ -1,17 +1,15 @@
-"""
-Create train/validation subsets from FER-Original-Dataset following research standards
-- Uses all FER images and splits 85% train / 15% validation
-- Adds all CK+ images to separate validation folder
-- Creates separate validation folders for FER and CK+ for independent evaluation
-- Configurable percentage to use subset of total data
-"""
+############################################
+# Create train/validation subsets from FER-Original-Dataset
+# 
+# by Gregor Autischer (August 2025)
+############################################
 
 import os
 import shutil
 from pathlib import Path
 import random
 
-# Configuration - uses absolute paths from repository root
+# uses absolute paths from repository root
 # Gets the repository root directory (parent of helpers directory)
 REPO_ROOT = Path(__file__).parent.parent.absolute()
 
@@ -24,20 +22,13 @@ TRAIN_OUTPUT_DIR = MAIN_OUTPUT_DIR / "FER-Training-Subset"
 FER_VAL_OUTPUT_DIR = MAIN_OUTPUT_DIR / "FER-Validation-Subset"
 CKP_VAL_OUTPUT_DIR = MAIN_OUTPUT_DIR / "CKP-Validation-Subset"
 
-# MAIN SETTING: Percentage of total images to use (100% = all images, 50% = half of all images)
+# Percentage of total images to use (100% = all images, 50% = half of all images)
 # Change this value to use only a subset of the data (e.g., 50.0 for 50% of images)
 PERCENTAGE_OF_DATA_TO_USE = 100.0  # Default: use all available images
 
 TRAIN_SPLIT = 0.85  # 85% of FER data for training, 15% for validation (research standard)
 
 def create_train_test_subsets():
-    """
-    Create train/validation subsets following research standards:
-    - FER data: split 85% train / 15% validation (separate folder)
-    - CK+ data: all goes to separate validation folder
-    - Creates three folders: FER-Training, FER-Validation, CKP-Validation
-    - Use configurable percentage of total available data
-    """
     
     # Paths are already Path objects from configuration
     fer_source_path = FER_SOURCE_DIR
@@ -84,7 +75,6 @@ def create_train_test_subsets():
         fer_image_files = list(fer_emotion_dir.glob("*.png"))
         
         # Calculate how many images to use based on percentage setting
-        # ORIGINAL HAD OTHER VALUE: used fixed IMAGES_PER_EMOTION, changed to use percentage of available data
         fer_images_to_use = int(len(fer_image_files) * (PERCENTAGE_OF_DATA_TO_USE / 100.0))
         
         if fer_images_to_use > len(fer_image_files):

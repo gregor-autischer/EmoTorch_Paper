@@ -11,12 +11,7 @@ import os
 import glob
 
 def plot_all_histories(model_dir):
-    """
-    Plot all training histories (FER, CKP, Combined) from a model folder
     
-    Args:
-        model_dir: Path to the model directory containing CSV files
-    """
     # Find all training history CSVs in the model folder
     csv_files = glob.glob(os.path.join(model_dir, "training_history_*.csv"))
     
