@@ -1,126 +1,50 @@
 # EmoTorch - Paper
+This repository contains Facial Emotion Recognition models build in pytorch that can be run out of the box. And their entire training process including dataset creation can be found here. This project was build for a university project at TU Graz from Gregor Autischer with Know Center. The purpuse of this project is to refine a existing Emotion Recogntion model with fairness in mind to make it certifyable in light of the EU AI Act. 
 
-PyTorch implementation of emotion recognition using convolutional neural networks.
+A precursor to this project was the paper: Practical Application and Limitations of AI Certification Catalogues in the Light of the AI Act [arXiv](https://arxiv.org/abs/2502.10398).
+The baseline model in this repository is a faithful recreation of the ConvlutionalNN model from the EmoPy Project [EmoPy](https://github.com/thoughtworksarts/EmoPy).
+The new model in the repository is a improved version that tries to address the shortcoming of the original model that came to light in the above mentioned paper during our certification attempt.
 
-# TRAIN MODEL FROM GROUND UP
-All the necessary scripts that were used to train the baseline model from the ground up are in the directory develop_baseline_model.
+This repository has a sister repo that just includes the two trained and ready to use facial emotion recogniton models. It can be found here: TODO
 
-## Quick Start - Execution Order
-Run those commands from the project root.
-
-### Step 0: Create VENV and Install Requirements
-```bash
-# Create virtual environment
-python -m venv venv
-
-# Activate environment
-source venv/bin/activate  # On Windows: fer_env\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
+# General Structure
+This entire repository is split into basically two sections. One for the baseline model and one for the new model, both of which have several directories and files. The general datastructure is:
+```
+EmoTorch_Paper/
+├── develop_baseline_model/
+│   └── [...]
+├── baseline_model/
+│   └── [...]
+├── build_new_model/
+│   └── [...]
+├── build_new_dataset/
+│   └── [...]
+└── new_model/
+    └── [...]
+README.md
+requirements.txt
 ```
 
-### Step 1: Prepare Data
-```bash
-# 1. Convert FER-2013 CSV to images
-python develop_baseline_model/helpers/FER_csv_to_img.py
+## Baseline Model
+The baseline model has the two directories "baseline_model" and "develop_baseline_model". The folder "develop_baseline_model" has all the scripts to retrain the baseline model from the ground up. The description of how to do this can be found in [BASELINE_MODEL.md](BASELINE_MODEL.md).
 
-# 2. Create organized dataset structure
-python develop_baseline_model/helpers/create_original_dataset.py
-
-# 3. Generate augmented images (28 variations per image)
-python develop_baseline_model/helpers/augment_original_dataset.py
-```
-
-### Step 2: Train Models
-```bash
-# Train single model
-python develop_baseline_model/models/convolutional_nn_pytorch.py
-
-# Or train multiple models with different parameters
-python develop_baseline_model/models/train_multiple_models.py
-
-# Generate plots
-python develop_baseline_model/models/plot_confusion_matrix.py model_00001
-python develop_baseline_model/models/plot_training_history.py model_00001
-```
-
-### Step 3: Analyze Results
-```bash
-# Compare models to find best match to original
-python develop_baseline_model/models/compare_models_to_original.py
-
-# Evaluate model on test data
-python develop_baseline_model/models/evaluate_model.py model_00001
-reload
+There is also a pretrained model shipping with this repo that represents the baseline for the associated research paper. It was created with the scripts inside of "develop_baseline_model" and can also be found there. But for convinience it is in the directory "baseline_model". In this folder you can find several scripts to evaluate the pretrained model and run predictions with it. The general structure is this:
 
 ```
+EmoTorch_Paper/
+└── baseline_model/
+    ├── helpers
+    │   └── generate_dataset_catalog.py
+    └── model
+        ├── looking_at_data.ipynb
+        ├── convolutional_nn_pytorch.py
+        ├── eval_model.py
+        ├── predict_image_baselinemodel.py
+        ├── model.pth
+        └── [...]
+```
 
-## Scripts Overview
-
-### Helpers (Data Preparation)
-
-**`FER_csv_to_img.py`**
-- Converts FER-2013 CSV to PNG images organized by emotion
-It reads the FER-2013 CSV from ./FER-Datasets/fer-2013/fer2013/fer2013.csv and saves the organized images to ./FER-Datasets/FER2013img/ with subdirectories for each emotion (angry/, fear/, etc.).
-
-**`create_original_dataset.py`**
-1. Copies images from FER-2013 and CK+ datasets
-2. Filters to only 4 emotions: anger, fear, calm, surprise
-3. Renames files sequentially (1.png, 2.png, etc.) in each emotion folder
-4. Maps emotions: neutral→calm (FER), happy→calm (CK+)
-5. Creates structure: FER-Original-Dataset/FER/ and FER-Original-Dataset/CKP/
-
-It reads from ../../FER-Datasets/FER2013img and ../../FER-Datasets/CK+ 
-and outputs to ../../FER-Original-Dataset/.
-
-**`augment_original_dataset.py`**
-- Creates 28 augmented versions per image
-- Applies rotations, noise, blur, occlusions, etc.
-
-It reads from ../../FER-Original-Dataset/ and outputs to ../../FER-Original-Dataset-Augmented/.
-
-**`create_train_test_subsets.py`** *(optional)*
-- Splits data into train/validation sets
-- Not needed if using convolutional_nn_pytorch.py with dynamic splits
-
-**`create_train_test_subsets_augmented.py`** *(optional)*
-- Same as above but for augmented data
-
-### Models (Training & Analysis)
-
-**`convolutional_nn_pytorch.py`**
-- Main training script
-- Trains CNN with configurable data usage factors
-- Saves model, metrics, confusion matrices
-
-**`train_multiple_models.py`**
-- Set in this script
-    - How many runs of training
-    - with which data usage ranges
-- Trains multiple models with random parameter combinations
-- Explores different data usage factors automatically
-
-**`compare_models_to_original.py`**
-- Compares all trained models to model_original
-- Finds models with most similar performance
-
-**`evaluate_model.py`**
-- Tests saved model on any dataset
-- Identifies misclassifications and saves error images
-
-**`plot_confusion_matrix.py`**
-- Creates confusion matrix heatmaps from model results
-
-**`plot_training_history.py`**
-- Plots training/validation accuracy and loss curves
-
-
-# BASELINE MODEL
-The recreated baseline model and all its required files are in the baseline_model directory.
-
-## Scripts in baseline_model/helpers/
-
+### In dir "helpers"
 **`generate_dataset_catalog.py`**
 - Generates a comprehensive CSV catalog of all images from both original and augmented datasets
 - Includes emotion labels, usage classifications (training/validation), and demographic attributes (race, gender, age)
@@ -128,42 +52,31 @@ The recreated baseline model and all its required files are in the baseline_mode
 - **Requires**: `faces_gender_race.csv` from [EmoTorch_Run_FairFace](https://github.com/gregor-autischer/EmoTorch_Run_FairFace) copied to `baseline_model/model/`
 - Usage: `python baseline_model/helpers/generate_dataset_catalog.py`
 
-## Scripts in baseline_model/model/
+### In dir "model"
+- "looking_at_data.ipynb" looks into all the statistics for fairness on the dataset.
+- "convolutional_nn_pytorch.py" is the architecture of the baseline model.
+- "eval_model.py" does evaluation of the model with basic metrics that it saves to files.
+- "predict_image_baselinemodel.py" performs single image emotion prediction using the trained baseline model. Use it: ```python predict_image_baselinemodel.py <image_path>```
+- "model.pth" is the description of the pretrained model these scripts use to do prediction and eval.
+- Other files (like CSVs) are created from one of those scripts.
 
-**`predict_image_baselinemodel.py`**
-- Predicts emotion from a single image file using the baseline model
-- Takes image path as command-line argument
-- Displays predicted emotion with confidence score and probability distribution for all emotions
-- Usage: `python predict_image_baselinemodel.py <image_path> [model_path]`
+## New Model
+The new model has three directories "build_new_model", "build_new_dataset" and "new_model". The directories "build_new_dataset" and "build_new_model" and its files are used to train the new model from the ground up. The description of how to do this can be found in [NEW_MODEL.md](NEW_MODEL.md).
 
-**`eval_model.py`**
-- Evaluates the baseline model on FER and CKP datasets from image_usage.csv
-- Generates side-by-side confusion matrices with percentages for both datasets
-- Calculates per-class precision, recall, and F1 scores
-- Creates a single combined visualization showing model performance on both datasets
-- Usage: `python eval_model.py`
-
-
-
-
-
-# Required Data Structure
+There is also a pretrained model shipping with this repo that represents the new improved model for the associated research paper. It was created with the scripts inside of "build_new_dataset" and "build_new_model" and can also be found there. But for convinience it is in the directory "new_model". In this folder you can find the new model and a script that allows you to easily predict images. The general structure is this:
 
 ```
 EmoTorch_Paper/
-├── develop_baseline_model/
-│   ├── helpers/           (data preparation scripts)
-│   └── models/            (training & analysis scripts)
-│       ├── model_original/  (baseline model)
-│       └── model_00001/     (trained models)
-├── FER-Original-Dataset/
-│   ├── FER/
-│   │   ├── anger/
-│   │   ├── fear/
-│   │   ├── calm/
-│   │   └── surprise/
-│   └── CKP/
-│       └── (same emotions)
-└── FER-Original-Dataset-Augmented/
-    └── (same structure)
+└── new_model/
+    ├── new_model
+    │   └── [...]
+    ├── enhanced_model.py
+    └── predict_images.py
 ```
+
+### In dir "new_model/new_model"
+- In this folder are several files that have all the statistical information for the new models performance.
+
+### In dir "new_model"
+- "enhanced_model.py" is the architecture of the new model.
+- "predict_images.py" performs single image emotion prediction using the trained baseline model. Use it: ```python predict_images.py <image_path>```
