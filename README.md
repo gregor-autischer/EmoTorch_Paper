@@ -80,3 +80,14 @@ EmoTorch_Paper/
 ### In dir "new_model"
 - "enhanced_model.py" is the architecture of the new model.
 - "predict_images.py" performs single image emotion prediction using the trained baseline model. Use it: ```python predict_images.py <image_path>```
+
+## Fairness Documentation
+Both models have comprehensive fairness analysis documentation that evaluates performance across demographic dimensions (gender, race, age) and provides certification assessments for deployment readiness.
+
+**Baseline Model Fairness Analysis:**
+- Jupyter notebook: [old_fairness_analysis_doc.ipynb](Fairness%20Documentation/old_fairness_analysis_doc.ipynb)
+- Includes: Dataset overview, model performance metrics, confusion matrices, and baseline limitations
+
+**Enhanced Model Fairness Analysis:**
+- Jupyter notebook: [new_fairness_analysis_doc.ipynb](Fairness%20Documentation/new_fairness_analysis_doc.ipynb)
+- Includes: Comprehensive fairness assessment across gender, race, and age groups, robustness testing, deployment certification, and comparative analysis
